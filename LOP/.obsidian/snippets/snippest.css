@@ -1,0 +1,57 @@
+/* Larger check-boxes */
+.markdown-preview-view .task-list-item-checkbox {
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  box-shadow: 0 0 0.1em #1867c0; 
+}
+
+/* Highlight uncompleted tasks */
+.markdown-preview-view ul > li.task-list-item {
+/* background-color: rgba(129, 76, 255, .18); */
+color: #EE9B01;
+text-decoration: none;
+}
+
+/* Don't highlight children of uncompleted tasks */
+.markdown-preview-view ul > li.task-list-item > ul, ol {
+background-color: var(--background-primary);
+text-decoration: none;
+}
+
+/* Recolor text of completed tasks */
+.markdown-preview-view ul > li.task-list-item.is-checked {
+background-color: var(--background-primary);
+color: #68904D;
+text-decoration: none;
+}
+
+/* Restore color of children of completed tasks */
+.markdown-preview-view ul > li.task-list-item.is-checked > ul, ol, li ol, li ul {
+background-color: var(--background-primary);
+color: var(--text-normal);
+text-decoration: none;
+}
+
+/* Same properties as above, but for tasks appearing in ordered lists */
+.markdown-preview-view ol > li.task-list-item {
+background-color: rgba(	129, 76, 255, .18);
+text-decoration: none;
+}
+
+.markdown-preview-view ol > li.task-list-item > ul, ol {
+background-color: var(--background-primary);
+text-decoration: none;
+}
+
+.markdown-preview-view ol > li.task-list-item.is-checked {
+background-color: var(--background-primary);
+color: #814CFF;
+text-decoration: none;
+}
+
+.markdown-preview-view ol > li.task-list-item.is-checked > ul, ol, li ol, li ul {
+background-color: var(--background-primary);
+color: var(--text-normal);
+text-decoration: none;
+}

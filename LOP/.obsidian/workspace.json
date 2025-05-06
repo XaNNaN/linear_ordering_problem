@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "6a7f4df425a29813",
+    "type": "split",
+    "children": [
+      {
+        "id": "8af11af2602eba0f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4956fd39ee40fdea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LOP общая информация и полезные ссылки.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LOP общая информация и полезные ссылки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a508e0fbce3480ac",
+    "type": "split",
+    "children": [
+      {
+        "id": "a498074ab3efb632",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5a7dceb71176766",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b242329d580394d4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "19bf3b399fb41ce8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "48bacc03ff785aec",
+    "type": "split",
+    "children": [
+      {
+        "id": "93408e3fb91b7289",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ebb8b5a9353ea54",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b7cf7b9f54e23836",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {},
+              "icon": "viewIcon",
+              "title": "Markdown-Autocomplete"
+            }
+          },
+          {
+            "id": "c49e2318a9c5a092",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "LOP общая информация и полезные ссылки.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for LOP общая информация и полезные ссылки"
+            }
+          },
+          {
+            "id": "79f2c4e0e69687bf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "LOP общая информация и полезные ссылки.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from LOP общая информация и полезные ссылки"
+            }
+          },
+          {
+            "id": "af170784a8288333",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "LOP общая информация и полезные ссылки.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of LOP общая информация и полезные ссылки"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 318.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false
+    }
+  },
+  "active": "4956fd39ee40fdea",
+  "lastOpenFiles": [
+    "Problem Description.md",
+    "LOP общая информация и полезные ссылки.md",
+    "Welcome.md",
+    "План показа Pixel web first.md",
+    "Показ Pixel Perfect/Требования к реализации.md",
+    "Показ Pixel Perfect/План показа отчёта Pixel Perfect.md",
+    "аналитики.md",
+    "Показ Pixel Perfect/Требования к реализации.tex",
+    "pg_restore.md",
+    "SQL dump.md",
+    "File system level backup.md",
+    "Приложение_6_Техническое_задание.docx",
+    "images/Pasted image 20240417103805.png",
+    "images/Pasted image 20240417103722.png",
+    "images/Pasted image 20240417103716.png",
+    "Показ Pixel Perfect",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/zlibbin-winx64h-gate-1.2.3.3001.25-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/zlib-winx64h-gate-1.2.3.3001.25-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/vcredist-winx64h-app-9.0.30729.17.5-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/tm1thirdparty-winx64h-app-11.8.01000.6-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/tm1ssl-winx64h-app-11.8.01000.6-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/tm1sharedclient-winx64h-app-10.3.10700.60468-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/zipfiles/winx64h/tm1perspectives-winx64h-app-10.3.10700.60468-inst.tar.gz",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/ZH_TW.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/ZH_CN.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/PT_BR.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/KO.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/JA.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/IT.bmp",
+    "tm1client_winx64h_2.0.911.20_ml.tar/winx64h/wui/FR.bmp",
+    "tablespace.md",
+    "Backup in PostgreSQL.md",
+    "pg_dump.md",
+    "psql.md",
+    "Бюджетная форма.md",
+    "Форсайт бюджетирование.md",
+    "аналитиками.md"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "obsidian-pandoc:pandoc-export-pdf": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "F10"
+    }
+  ]
+}
