@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "LOP общая информация и полезные ссылки.md",
+                "file": "К Божко.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LOP общая информация и полезные ссылки"
+              "title": "К Божко"
             }
           },
           {
@@ -63,8 +63,7 @@
               "title": "К Божко"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -223,15 +222,15 @@
       "obsidian-markdown-formatting-assistant-plugin:Open Markdown Formatting Assistant": false
     }
   },
-  "active": "65a5abf53f24648e",
+  "active": "4956fd39ee40fdea",
   "lastOpenFiles": [
+    "LOP общая информация и полезные ссылки.md",
+    "Сравнение точных методов.md",
+    "Пункты к диплому.md",
     "К Божко.md",
     "Untitled 1.md",
-    "LOP общая информация и полезные ссылки.md",
-    "Пункты к диплому.md",
     "Untitled.md",
     "Problem Description.md",
-    "Сравнение точных методов.md",
     "Welcome.md",
     "План показа Pixel web first.md",
     "Показ Pixel Perfect/Требования к реализации.md",
