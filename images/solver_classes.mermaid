@@ -1,0 +1,7 @@
+classDiagram
+    BaseSolver <|-- ExactSolver
+    BaseSolver <|-- HeuristicSolver
+    ExactSolver <|-- BranchAndBound
+    ExactSolver <|-- BranchAndCut
+    HeuristicSolver <|-- GreedyInsertion
+    HeuristicSolver <|-- LocalSearch

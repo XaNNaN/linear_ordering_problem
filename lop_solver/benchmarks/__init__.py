@@ -1,0 +1,1 @@
+from benchmarks.lolib import load_lolib_matrix
