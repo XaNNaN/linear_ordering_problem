@@ -10,6 +10,8 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 from algorithms.heuristic.constructive.becker import BeckerAlgorithm
 from algorithms.exact.branch_bound import BranchAndBound
+from algorithms.exact.branch_cut import BranchAndCut
+from algorithms.heuristic.constructive.greedy_insertion import GreedySolver 
 from metrics.evaluation import SolverEvaluator
 from benchmarks.lolib import load_lolib_matrix
 from benchmarks.random_matrix import generate_random_lop_instance
@@ -18,7 +20,12 @@ def main():
     evaluator = SolverEvaluator([
         lambda m: BeckerAlgorithm(m, optimized=False),
         lambda m: BeckerAlgorithm(m, optimized=True),
+        lambda m: GreedySolver(m, method='basic'),
+        lambda m: GreedySolver(m, method='best_insertion'),
+        lambda m: GreedySolver(m, method='look_ahead'),
+        lambda m: GreedySolver(m, method='random'),
         # BranchAndBound,
+        # BranchAndCut,
         # GreedyInsertion,
         # LocalSearch,
     ])
@@ -34,7 +41,7 @@ def main():
     try:
         project_root = os.path.dirname(SCRIPT_DIR)
         file_path = os.path.join(project_root, "lop_solver", "data", "lolib", "IO", "N-t59f11xx")
-        lolib_matrix = load_lolib_matrix(file_path)  # Замени на реальный файл
+        lolib_matrix = load_lolib_matrix(file_path)
 
         evaluator.evaluate(lolib_matrix, repetitions=5)
         evaluator.print_report()

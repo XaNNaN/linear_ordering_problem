@@ -32,9 +32,9 @@ class SolverEvaluator:
         return sorted(self.results, key=lambda x: x["best_cost"], reverse=True)
 
     def print_report(self):
-        print("{:<35} {:<15} {:<15}".format("Solver", "Best Cost", "Avg Time"))
+        print("{:<45} {:<15} {:<15}".format("Solver", "Best Cost", "Avg Time"))
         for res in self.get_results():
-            print("{:<35} {:<15.2f} {:<15.4f}".format(
+            print("{:<45} {:<15.2f} {:<15.4f}".format(
                 res["solver"], res["best_cost"], res["avg_time"]))
 
     def clear_results(self):
