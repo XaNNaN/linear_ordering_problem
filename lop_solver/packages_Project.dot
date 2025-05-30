@@ -1,0 +1,30 @@
+digraph "packages_Project" {
+rankdir=BT
+charset="utf-8"
+"algorithms" [color="black", label=<algorithms>, shape="box", style="solid"];
+"algorithms.abs_solvers" [color="black", label=<algorithms.abs_solvers>, shape="box", style="solid"];
+"algorithms.exact" [color="black", label=<algorithms.exact>, shape="box", style="solid"];
+"algorithms.exact.branch_bound" [color="black", label=<algorithms.exact.branch_bound>, shape="box", style="solid"];
+"algorithms.exact.branch_cut" [color="black", label=<algorithms.exact.branch_cut>, shape="box", style="solid"];
+"algorithms.exact.brute_force" [color="black", label=<algorithms.exact.brute_force>, shape="box", style="solid"];
+"algorithms.exact.mitchell_borchers" [color="black", label=<algorithms.exact.mitchell_borchers>, shape="box", style="solid"];
+"algorithms.heuristic" [color="black", label=<algorithms.heuristic>, shape="box", style="solid"];
+"algorithms.heuristic.constructive" [color="black", label=<algorithms.heuristic.constructive>, shape="box", style="solid"];
+"algorithms.heuristic.constructive.becker" [color="black", label=<algorithms.heuristic.constructive.becker>, shape="box", style="solid"];
+"algorithms.heuristic.constructive.greedy_insertion" [color="black", label=<algorithms.heuristic.constructive.greedy_insertion>, shape="box", style="solid"];
+"algorithms.heuristic.constructive.pairwise_greedy" [color="black", label=<algorithms.heuristic.constructive.pairwise_greedy>, shape="box", style="solid"];
+"algorithms.heuristic.hybrid" [color="black", label=<algorithms.heuristic.hybrid>, shape="box", style="solid"];
+"algorithms.heuristic.hybrid.constructive_destructive" [color="black", label=<algorithms.heuristic.hybrid.constructive_destructive>, shape="box", style="solid"];
+"algorithms.heuristic.hybrid.hierarchical" [color="black", label=<algorithms.heuristic.hybrid.hierarchical>, shape="box", style="solid"];
+"algorithms.local_search" [color="black", label=<algorithms.local_search>, shape="box", style="solid"];
+"algorithms.metaheuristics" [color="black", label=<algorithms.metaheuristics>, shape="box", style="solid"];
+"algorithms.metaheuristics.great_deluge" [color="black", label=<algorithms.metaheuristics.great_deluge>, shape="box", style="solid"];
+"algorithms.metaheuristics.memetic" [color="black", label=<algorithms.metaheuristics.memetic>, shape="box", style="solid"];
+"algorithms.metaheuristics.memetic_multi_parent" [color="black", label=<algorithms.metaheuristics.memetic_multi_parent>, shape="box", style="solid"];
+"algorithms.metaheuristics.scatter_search" [color="black", label=<algorithms.metaheuristics.scatter_search>, shape="box", style="solid"];
+"algorithms.metaheuristics.tabu_search" [color="black", label=<algorithms.metaheuristics.tabu_search>, shape="box", style="solid"];
+"algorithms.exact.branch_bound" -> "algorithms.abs_solvers" [arrowhead="open", arrowtail="none"];
+"algorithms.exact.branch_cut" -> "algorithms.abs_solvers" [arrowhead="open", arrowtail="none"];
+"algorithms.heuristic.constructive.becker" -> "algorithms.abs_solvers" [arrowhead="open", arrowtail="none"];
+"algorithms.heuristic.constructive.greedy_insertion" -> "algorithms.abs_solvers" [arrowhead="open", arrowtail="none"];
+}

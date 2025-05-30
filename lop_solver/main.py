@@ -12,6 +12,7 @@ from algorithms.heuristic.constructive.becker import BeckerAlgorithm
 from algorithms.exact.branch_bound import BranchAndBound
 from algorithms.exact.branch_cut import BranchAndCut
 from algorithms.heuristic.constructive.greedy_insertion import GreedySolver 
+from algorithms.metaheuristics.great_deluge import GreatDelugeAlgorithm, plot_gda_performance
 from metrics.evaluation import SolverEvaluator
 from benchmarks.lolib import load_lolib_matrix
 from benchmarks.random_matrix import generate_random_lop_instance
@@ -24,6 +25,7 @@ def main():
         lambda m: GreedySolver(m, method='best_insertion'),
         lambda m: GreedySolver(m, method='look_ahead'),
         lambda m: GreedySolver(m, method='random'),
+        lambda m: GreatDelugeAlgorithm(m,max_iter=5000, rain_speed=0.997, initial_water_level_factor=1.9) 
         # BranchAndBound,
         # BranchAndCut,
         # GreedyInsertion,
@@ -48,7 +50,11 @@ def main():
     except FileNotFoundError:
         print("LOLIB file not found. Skipping.")
 
-
+    greedy = GreedySolver(lolib_matrix, method='best_insertion')
+    greedy.solve()
+    gda = GreatDelugeAlgorithm(lolib_matrix, initial_solution=greedy.get_ordering(), max_iter=5000, rain_speed=0.997, initial_water_level_factor=2)
+    gda.solve()
+    plot_gda_performance(gda)
     
 if __name__ == "__main__":
     main()
