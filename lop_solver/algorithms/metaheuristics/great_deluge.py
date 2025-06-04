@@ -3,7 +3,7 @@ import random
 import time
 from typing import List, Tuple, Optional
 from algorithms.abs_solvers import HeuristicSolver
-from utils.lop_utils import generate_neighborhood
+from utils.lop_utils import generate_neighborhood, generate_random_neighbor
 
 class GreatDelugeAlgorithm(HeuristicSolver):
     """
@@ -38,6 +38,8 @@ class GreatDelugeAlgorithm(HeuristicSolver):
         self.neighborhood_type = neighborhood_type
         self.water_level_history = []
         self.cost_history = []
+        self.bad_iter_counter = 0
+
         
         # Инициализация начального решения
         if initial_solution:
@@ -53,7 +55,7 @@ class GreatDelugeAlgorithm(HeuristicSolver):
         # Установка начального уровня воды
         self.water_level = self.current_cost * initial_water_level_factor
 
-    def solve(self) -> None:
+    def _solve(self) -> None:
         start_time = time.time()
         
         for iteration in range(self.max_iter):
@@ -72,6 +74,7 @@ class GreatDelugeAlgorithm(HeuristicSolver):
                 # Переход к лучшему решению
                 self.current_solution = candidate_solution
                 self.current_cost = candidate_cost
+                self.bad_iter_counter = 0
                 
                 # Обновление лучшего решения
                 if candidate_cost > self.best_cost:
@@ -81,6 +84,9 @@ class GreatDelugeAlgorithm(HeuristicSolver):
                 # Принятие решения с ухудшением, но выше уровня воды
                 self.current_solution = candidate_solution
                 self.current_cost = candidate_cost
+                self.bad_iter_counter = 0
+            else:
+                self.bad_iter_counter += 1
             
             # Понижение уровня воды
             # if self.current_cost <= self.water_level:
@@ -102,6 +108,62 @@ class GreatDelugeAlgorithm(HeuristicSolver):
         self.solution = self.best_solution
         self.cost = self.best_cost
         self.execution_time = time.time() - start_time
+        
+    def solve(self) -> None:
+            start_time = time.time()
+            
+            for iteration in range(self.max_iter):
+
+                
+                # Выбор случайного соседа
+                candidate_solution = generate_random_neighbor(
+                    self.current_solution,
+                    self.neighborhood_type
+                )
+                candidate_cost = self._calc_cost(self.matrix, candidate_solution)
+
+                # Принятие решения о переходе
+                if candidate_cost > self.current_cost:
+                    # Переход к лучшему решению
+                    self.current_solution = candidate_solution
+                    self.current_cost = candidate_cost
+                    self.bad_iter_counter = 0
+                    
+                    # Обновление лучшего решения
+                    if candidate_cost > self.best_cost:
+                        self.best_solution = candidate_solution
+                        self.best_cost = candidate_cost
+                elif candidate_cost > self.water_level:
+                    # Принятие решения с ухудшением, но выше уровня воды
+                    self.current_solution = candidate_solution
+                    self.current_cost = candidate_cost
+                    self.bad_iter_counter = 0
+                else:
+                    self.bad_iter_counter += 1
+               
+                # Понижение уровня воды
+                # if self.current_cost <= self.water_level:
+                #     dry = self.rain_speed * (self.water_level - self.current_cost) 
+                #     self.water_level -= dry
+                # else:
+                # self.water_level += self.best_cost /  self.max_iter # базовый
+                self.water_level +=  3 * self.best_cost /  self.max_iter # базовый
+                
+                # Сохранение истории для анализа
+                self.water_level_history.append(self.water_level)
+                self.cost_history.append(self.current_cost)
+                self.iterations += 1
+
+                if self.bad_iter_counter > 100:
+                    break                
+                # Ранняя остановка, если уровень воды упал ниже лучшего решения
+                # if self.water_level < self.best_cost * 0.95:
+                #     break
+            
+            # Фиксация лучшего решения
+            self.solution = self.best_solution
+            self.cost = self.best_cost
+            self.execution_time = time.time() - start_time
 
     def get_stats(self) -> dict:
         stats = super().get_stats()
@@ -127,6 +189,7 @@ def plot_gda_performance(gda: GreatDelugeAlgorithm):
     plt.subplot(1, 2, 1)
     plt.plot(gda.cost_history, 'b-', label='Текущая стоимость')
     plt.plot([gda.best_cost] * len(gda.cost_history), 'r--', label='Лучшая стоимость')
+    plt.plot(gda.water_level_history, 'g-', label='Уровень воды')
     plt.xlabel('Итерация')
     plt.ylabel('Стоимость')
     plt.title('Динамика стоимости')

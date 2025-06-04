@@ -25,7 +25,7 @@ def main():
         lambda m: GreedySolver(m, method='best_insertion'),
         lambda m: GreedySolver(m, method='look_ahead'),
         lambda m: GreedySolver(m, method='random'),
-        lambda m: GreatDelugeAlgorithm(m,max_iter=5000, rain_speed=0.997, initial_water_level_factor=1.9) 
+        lambda m: GreatDelugeAlgorithm(m,max_iter=5000, rain_speed=0., initial_water_level_factor=1.9) 
         # BranchAndBound,
         # BranchAndCut,
         # GreedyInsertion,
@@ -52,7 +52,7 @@ def main():
 
     greedy = GreedySolver(lolib_matrix, method='best_insertion')
     greedy.solve()
-    gda = GreatDelugeAlgorithm(lolib_matrix, initial_solution=greedy.get_ordering(), max_iter=5000, rain_speed=0.997, initial_water_level_factor=2)
+    gda = GreatDelugeAlgorithm(lolib_matrix, max_iter=3000, rain_speed=0.997, initial_water_level_factor=1, neighborhood_type='insert')
     gda.solve()
     plot_gda_performance(gda)
     

@@ -38,7 +38,7 @@ def is_valid_permutation(ordering: List[int], n: int) -> bool:
 
 
 
-def generate_neighborhood(ordering: List[int], 
+def _generate_neighborhood(ordering: List[int], 
                          neighborhood_type: str = 'swap',
                          size: Optional[int] = None) -> List[List[int]]:
     """
@@ -92,3 +92,25 @@ def generate_neighborhood(ordering: List[int],
         neighborhood = random.sample(neighborhood, size)
     
     return neighborhood
+
+
+def generate_random_neighbor(solution: List[int], neighborhood_type: str) -> List[int]:
+    n = len(solution)
+    if neighborhood_type == 'swap':
+        i, j = random.sample(range(n), 2)
+        neighbor = solution.copy()
+        neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
+        return neighbor
+    elif neighborhood_type == 'insert':
+        i, j = random.sample(range(n), 2)
+        neighbor = solution.copy()
+        elem = neighbor.pop(i)
+        neighbor.insert(j, elem)
+        return neighbor
+    elif neighborhood_type == 'reverse':
+        i, j = sorted(random.sample(range(n), 2))
+        neighbor = solution.copy()
+        neighbor[i:j+1] = reversed(neighbor[i:j+1])
+        return neighbor
+    else:
+        raise ValueError(f"Unknown neighborhood type: {neighborhood_type}")
