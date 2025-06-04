@@ -1,0 +1,166 @@
+matrix,size,best_cost,solver_count,best_solver,best_solver_cost,deviation
+N-atp111,111,1433,7,Greedy (best_insertion),1433.0,0.0
+N-atp134,134,1670,7,GreatDeluge,1670.0,0.0
+N-atp163,163,1943,7,GreatDeluge,1943.0,0.0
+N-atp24,24,169,7,GreatDeluge,169.0,0.0
+N-be75eec,50,235347,6,GreatDeluge,235347.0,0.0
+N-be75eec_150,150,3331270,7,GreatDeluge,3331270.0,0.0
+N-be75np,50,714781,6,GreatDeluge,714781.0,0.0
+N-be75oi,50,110800,6,GreatDeluge,110800.0,0.0
+N-be75tot,50,972348,6,GreatDeluge,972348.0,0.0
+N-p40-01,40,28119,6,Greedy (best_insertion),28119.0,0.0
+N-p40-02,40,26590,6,GreatDeluge,26590.0,0.0
+N-p40-03,40,27217,6,GreatDeluge,27217.0,0.0
+N-p40-04,40,27877,6,GreatDeluge,27877.0,0.0
+N-p40-05,40,27005,6,Greedy (best_insertion),27005.0,0.0
+N-p40-06,40,28449,6,Greedy (best_insertion),28449.0,0.0
+N-p40-07,40,27642,6,Greedy (best_insertion),27642.0,0.0
+N-p40-08,40,27503,6,GreatDeluge,27503.0,0.0
+N-p40-09,40,29954,6,GreatDeluge,29954.0,0.0
+N-p40-10,40,31123,6,GreatDeluge,31123.0,0.0
+N-p40-11,40,30115,6,GreatDeluge,30115.0,0.0
+N-p40-12,40,30198,6,GreatDeluge,30198.0,0.0
+N-p40-13,40,32523,6,GreatDeluge,32523.0,0.0
+N-p40-14,40,33424,6,GreatDeluge,33424.0,0.0
+N-p40-15,40,33705,6,GreatDeluge,33705.0,0.0
+N-p40-16,40,35394,6,Greedy (best_insertion),35394.0,0.0
+N-p40-17,40,37222,6,GreatDeluge,37222.0,0.0
+N-p40-18,40,37235,6,Greedy (best_insertion),37235.0,0.0
+N-p40-19,40,38179,6,Greedy (best_insertion),38179.0,0.0
+N-p40-20,40,38955,6,GreatDeluge,38955.0,0.0
+N-p44-01,44,34966,6,Greedy (best_insertion),34966.0,0.0
+N-p44-02,44,34448,6,GreatDeluge,34448.0,0.0
+N-p44-03,44,33675,6,GreatDeluge,33675.0,0.0
+N-p44-04,44,32634,6,GreatDeluge,32634.0,0.0
+N-p44-05,44,33757,6,GreatDeluge,33757.0,0.0
+N-p44-06,44,32988,6,Greedy (best_insertion),32988.0,0.0
+N-p44-07,44,32106,6,GreatDeluge,32106.0,0.0
+N-p44-08,44,33432,6,GreatDeluge,33432.0,0.0
+N-p44-09,44,32436,6,Greedy (best_insertion),32436.0,0.0
+N-p44-10,44,32921,6,Greedy (best_insertion),32921.0,0.0
+N-p44-11,44,33245,6,Greedy (best_insertion),33245.0,0.0
+N-p44-12,44,32830,6,GreatDeluge,32830.0,0.0
+N-p44-13,44,34382,6,Greedy (best_insertion),34382.0,0.0
+N-p44-14,44,34626,6,Greedy (best_insertion),34626.0,0.0
+N-p44-15,44,33209,6,GreatDeluge,33209.0,0.0
+N-p44-16,44,35255,6,GreatDeluge,35255.0,0.0
+N-p44-17,44,34286,6,Greedy (best_insertion),34286.0,0.0
+N-p44-18,44,35585,6,GreatDeluge,35585.0,0.0
+N-p44-19,44,35976,6,Greedy (best_insertion),35976.0,0.0
+N-p44-20,44,36758,6,Greedy (best_insertion),36758.0,0.0
+N-p44-21,44,36967,6,Greedy (best_insertion),36967.0,0.0
+N-p44-22,44,35661,6,Greedy (best_insertion),35661.0,0.0
+N-p44-23,44,35436,6,GreatDeluge,35436.0,0.0
+N-p44-24,44,37385,6,Greedy (best_insertion),37385.0,0.0
+N-p44-25,44,37447,6,GreatDeluge,37447.0,0.0
+N-p44-26,44,38224,6,GreatDeluge,38224.0,0.0
+N-p44-27,44,38747,6,Greedy (best_insertion),38747.0,0.0
+N-p44-28,44,39363,6,Greedy (best_insertion),39363.0,0.0
+N-p44-29,44,41396,6,Greedy (best_insertion),41396.0,0.0
+N-p44-30,44,39474,6,GreatDeluge,39474.0,0.0
+N-p44-31,44,42673,6,GreatDeluge,42673.0,0.0
+N-p44-32,44,41724,6,Greedy (best_insertion),41724.0,0.0
+N-p44-33,44,41339,6,GreatDeluge,41339.0,0.0
+N-p44-34,44,44481,6,Greedy (best_insertion),44481.0,0.0
+N-p44-35,44,43196,6,GreatDeluge,43196.0,0.0
+N-p44-36,44,44123,6,Greedy (best_insertion),44123.0,0.0
+N-p44-37,44,44358,6,Greedy (best_insertion),44358.0,0.0
+N-p44-38,44,46054,6,Greedy (best_insertion),46054.0,0.0
+N-p44-39,44,47946,6,Greedy (best_insertion),47946.0,0.0
+N-p44-40,44,46927,6,GreatDeluge,46927.0,0.0
+N-p44-41,44,47330,6,GreatDeluge,47330.0,0.0
+N-p44-42,44,48198,6,Greedy (best_insertion),48198.0,0.0
+N-p44-43,44,50101,6,GreatDeluge,50101.0,0.0
+N-p44-44,44,51152,6,Greedy (best_insertion),51152.0,0.0
+N-p44-45,44,52480,6,Greedy (best_insertion),52480.0,0.0
+N-p44-46,44,52400,6,GreatDeluge,52400.0,0.0
+N-p44-47,44,53402,6,Greedy (best_insertion),53402.0,0.0
+N-p44-48,44,53481,6,Greedy (best_insertion),53481.0,0.0
+N-p44-49,44,56094,6,Greedy (best_insertion),56094.0,0.0
+N-p44-50,44,55677,6,GreatDeluge,55677.0,0.0
+N-p50-01,50,44007,6,Greedy (best_insertion),44007.0,0.0
+N-p50-02,50,42344,6,GreatDeluge,42344.0,0.0
+N-p50-03,50,43210,6,Greedy (best_insertion),43210.0,0.0
+N-p50-04,50,42750,6,Greedy (best_insertion),42750.0,0.0
+N-p50-05,50,41774,6,GreatDeluge,41774.0,0.0
+N-p50-06,50,41076,6,Greedy (best_insertion),41076.0,0.0
+N-p50-07,50,41366,6,GreatDeluge,41366.0,0.0
+N-p50-08,50,41328,6,Greedy (best_insertion),41328.0,0.0
+N-p50-09,50,42309,6,GreatDeluge,42309.0,0.0
+N-p50-10,50,42897,6,Greedy (best_insertion),42897.0,0.0
+N-p50-11,50,42238,6,GreatDeluge,42238.0,0.0
+N-p50-12,50,41819,6,Greedy (best_insertion),41819.0,0.0
+N-p50-13,50,42309,6,Greedy (best_insertion),42309.0,0.0
+N-p50-14,50,43650,6,GreatDeluge,43650.0,0.0
+N-p50-15,50,43956,6,Greedy (best_insertion),43956.0,0.0
+N-p50-16,50,43602,6,Greedy (best_insertion),43602.0,0.0
+N-p50-17,50,44350,6,GreatDeluge,44350.0,0.0
+N-p50-18,50,45915,6,Greedy (best_insertion),45915.0,0.0
+N-p50-19,50,45926,6,GreatDeluge,45926.0,0.0
+N-p50-20,50,45768,6,GreatDeluge,45768.0,0.0
+N-r100a2,100,142400,6,GreatDeluge,142400.0,0.0
+N-r100b2,100,141477,6,Greedy (best_insertion),141477.0,0.0
+N-r100c2,100,138333,6,GreatDeluge,138333.0,0.0
+N-r100d2,100,141230,6,Greedy (best_insertion),141230.0,0.0
+N-r100e2,100,145261,6,Greedy (best_insertion),145261.0,0.0
+N-r150a0,150,353762,6,Becker (non-opt),353762.0,0.0
+N-r150a1,150,343168,6,GreatDeluge,343168.0,0.0
+N-r150b0,150,360003,6,GreatDeluge,360003.0,0.0
+N-r150b1,150,340647,6,GreatDeluge,340647.0,0.0
+N-r150c0,150,355892,6,GreatDeluge,355892.0,0.0
+N-r150c1,150,338593,6,GreatDeluge,338593.0,0.0
+N-r150d0,150,353362,6,GreatDeluge,353362.0,0.0
+N-r150d1,150,342185,6,GreatDeluge,342185.0,0.0
+N-r150e0,150,357674,6,Becker (non-opt),357674.0,0.0
+N-r150e1,150,340170,6,GreatDeluge,340170.0,0.0
+N-sgb75,75,2725343,6,GreatDeluge,2725343.0,0.0
+N-stabu70,60,358956,6,Greedy (best_insertion),358956.0,0.0
+N-stabu74,60,533094,6,GreatDeluge,533094.0,0.0
+N-stabu75,60,544338,6,GreatDeluge,544338.0,0.0
+N-t1d100,100,103762,6,Greedy (best_insertion),103762.0,0.0
+N-t1d150,150,226674,6,GreatDeluge,226674.0,0.0
+N-t2d100,100,23438,6,Greedy (best_insertion),23438.0,0.0
+N-t2d150,150,72983,6,GreatDeluge,72983.0,0.0
+N-t59b11xx,44,207205,6,GreatDeluge,207205.0,0.0
+N-t59d11xx,44,146739,6,GreatDeluge,146739.0,0.0
+N-t59f11xx,44,121492,6,GreatDeluge,121492.0,0.0
+N-t59i11xx,44,8218686,6,Greedy (best_insertion),8218686.0,0.0
+N-t59n11xx,44,20743,6,Greedy (best_insertion),20743.0,0.0
+N-t65b11xx,44,354821,6,Greedy (best_insertion),354821.0,0.0
+N-t65d11xx,44,237653,6,Greedy (best_insertion),237653.0,0.0
+N-t65f11xx,44,216014,6,GreatDeluge,216014.0,0.0
+N-t65i11xx,44,14419694,6,GreatDeluge,14419694.0,0.0
+N-t65l11xx,44,16719,6,GreatDeluge,16719.0,0.0
+N-t65n11xx,44,31982,6,Greedy (best_insertion),31982.0,0.0
+N-t65w11xx,44,137523052,6,Greedy (best_insertion),137523052.0,0.0
+N-t69r11xx,44,762430,6,GreatDeluge,762430.0,0.0
+N-t70b11xx,44,524611,6,GreatDeluge,524611.0,0.0
+N-t70d11xx,44,373151,6,GreatDeluge,373151.0,0.0
+N-t70d11xxb,44,362625,6,GreatDeluge,362625.0,0.0
+N-t70f11xx,44,357449,6,GreatDeluge,357449.0,0.0
+N-t70i11xx,44,24777811,6,Greedy (best_insertion),24777811.0,0.0
+N-t70k11xx,44,60456800,6,Greedy (best_insertion),60456800.0,0.0
+N-t70l11xx,44,25170,6,GreatDeluge,25170.0,0.0
+N-t70n11xx,44,52422,6,GreatDeluge,52422.0,0.0
+N-t70u11xx,44,21675600,6,Greedy (best_insertion),21675600.0,0.0
+N-t70w11xx,44,222415317,6,Greedy (best_insertion),222415317.0,0.0
+N-t70x11xx,44,282169584,6,Greedy (best_insertion),282169584.0,0.0
+N-t74d11xx,44,562214,6,GreatDeluge,562214.0,0.0
+N-t75d11xx,44,574006,6,Greedy (best_insertion),574006.0,0.0
+N-t75e11xx,44,2724053,6,GreatDeluge,2724053.0,0.0
+N-t75i11xx,44,63380002,6,Greedy (best_insertion),63380002.0,0.0
+N-t75k11xx,44,108403,6,GreatDeluge,108403.0,0.0
+N-t75n11xx,44,91778,6,Greedy (best_insertion),91778.0,0.0
+N-t75u11xx,44,52577626,6,GreatDeluge,52577626.0,0.0
+N-tiw56n54,56,90723,6,Greedy (best_insertion),90723.0,0.0
+N-tiw56n58,56,124662,6,Greedy (best_insertion),124662.0,0.0
+N-tiw56n62,56,175296,6,Greedy (best_insertion),175296.0,0.0
+N-tiw56n66,56,224300,6,Greedy (best_insertion),224300.0,0.0
+N-tiw56n67,56,221816,6,GreatDeluge,221816.0,0.0
+N-tiw56n72,56,362016,6,GreatDeluge,362016.0,0.0
+N-tiw56r54,56,102424,6,Greedy (best_insertion),102424.0,0.0
+N-tiw56r58,56,128965,6,Greedy (best_insertion),128965.0,0.0
+N-tiw56r66,56,207986,6,Greedy (best_insertion),207986.0,0.0
+N-tiw56r67,56,221586,6,GreatDeluge,221586.0,0.0
+N-tiw56r72,56,266994,6,GreatDeluge,266994.0,0.0
+N-usa79,79,1785234,6,Greedy (best_insertion),1785234.0,0.0

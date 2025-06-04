@@ -19,7 +19,7 @@ from metrics.evaluation import SolverEvaluator
 from benchmarks.lolib import load_lolib_matrix
 from benchmarks.random_matrix import generate_random_lop_instance
 
-
+import concurrent.futures
 
 import shutil
 
@@ -56,6 +56,22 @@ def create_great_deluge(matrix):
         initial_water_level_factor=1.9, 
         neighborhood_type='insert'
     )
+
+
+# Функция для запуска решателя с ограничением времени
+def run_solver_with_timeout(solver_factory, matrix, timeout=3):
+    start_time = time.time()
+    try:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(lambda: solver_factory(matrix).solve())
+            result = future.result(timeout=timeout)
+            solver = future.result()
+            exec_time = time.time() - start_time
+            return solver.cost, exec_time, None
+    except concurrent.futures.TimeoutError:
+        return float('nan'), timeout, "Timeout"
+    except Exception as e:
+        return float('nan'), time.time() - start_time, str(e)
 
 
 def main():
@@ -99,13 +115,18 @@ def main():
     # Параллельная обработка наборов данных
     all_results = []
     with concurrent.futures.ProcessPoolExecutor(max_workers=os.cpu_count()) as executor:
-        # Запускаем задачи
-        futures = {executor.submit(process_func, dataset): dataset for dataset in datasets}
+        futures = {}
+        for dataset in datasets:
+            future = executor.submit(
+                process_dataset,
+                dataset,
+                solvers,
+                lolib_data_root,
+                results_root
+            )
+            futures[future] = dataset
         
-        # Обрабатываем результаты по мере их поступления
-        for future in tqdm(concurrent.futures.as_completed(futures), 
-                          total=len(datasets),
-                          desc="Processing datasets"):
+        for future in tqdm(concurrent.futures.as_completed(futures), total=len(datasets), desc="Processing datasets"):
             dataset = futures[future]
             try:
                 dataset_results = future.result()
@@ -176,24 +197,34 @@ def process_dataset(dataset: str, solvers: dict, lolib_data_root: str, results_r
             
             # Добавляем к результатам набора данных
             dataset_results.append(matrix_results)
+
             
             # Сохраняем графики производительности для GreatDeluge
-            gda_solver = GreatDelugeAlgorithm(
-                matrix, 
-                max_iter=5000, 
-                rain_speed=0.997, 
-                initial_water_level_factor=1.9, 
-                neighborhood_type='insert'
-            )
-            gda_solver.solve()
-            plot_path = os.path.join(results_path, f"{matrix_name}_gda_performance.png")
-            plot_gda_performance(gda_solver, save_path=plot_path)
+            try:
+                gda_solver = create_great_deluge(matrix)
+                start_time = time.time()
+                gda_solver.solve()
+                exec_time = time.time() - start_time
+                if exec_time > 3:
+                    print(f"GreatDeluge exceeded time limit for {matrix_name}: {exec_time:.2f}s")
+                
+                plot_path = os.path.join(results_path, f"{matrix_name}_gda_performance.png")
+                plot_gda_performance(gda_solver, save_path=plot_path)
+            except Exception as e:
+                print(f"Error generating GDA plot for {matrix_name}: {str(e)}")
             
         except Exception as e:
             print(f"Error processing {matrix_file} in {dataset}: {str(e)}")
     
     # Объединяем результаты всех матриц в наборе
-    return pd.concat(dataset_results, ignore_index=True) if dataset_results else pd.DataFrame()
+    dataset_df = pd.concat(dataset_results, ignore_index=True) if dataset_results else pd.DataFrame()
+
+    # Генерируем финальный отчет для датасета
+    if not dataset_df.empty:
+        generate_dataset_report(dataset_df, results_path, dataset)
+
+    return dataset_df
+
 
 def run_matrix_benchmark(solvers: dict, matrix: np.ndarray, 
                          matrix_name: str, size: int, repetitions: int = 5) -> pd.DataFrame:
@@ -248,6 +279,95 @@ def run_matrix_benchmark(solvers: dict, matrix: np.ndarray,
         df['best_cost'] = float('nan')
     
     return df
+
+def generate_dataset_report(df: pd.DataFrame, output_path: str, dataset_name: str):
+    """
+    Генерирует отчет по одному датасету
+    """
+    if df.empty:
+        return
+    
+    report_path = os.path.join(output_path, "reports")
+    os.makedirs(report_path, exist_ok=True)
+    
+    # 1. Отчет по решателям
+    solver_report = df.groupby('solver').agg(
+        num_matrices=('matrix', 'nunique'),
+        success_rate=('status', lambda x: (x == 'Success').mean()),
+        timeout_rate=('status', lambda x: (x == 'Timeout').mean()),
+        avg_deviation=('deviation', 'mean'),
+        std_deviation=('deviation', 'std'),
+        avg_time=('time', 'mean'),
+        percentile_90_time=('time', lambda x: np.percentile(x, 90)),
+        best_cost=('cost', 'max')
+    ).reset_index()
+    
+    solver_report = solver_report.sort_values(by='avg_deviation')
+    solver_report.to_csv(os.path.join(report_path, f"{dataset_name}_solver_performance.csv"), index=False)
+    
+    # 2. Отчет по матрицам
+    matrix_report = df.groupby(['matrix', 'size']).agg(
+        best_cost=('best_cost', 'first'),
+        solver_count=('solver', 'nunique'),
+        best_solver=('cost', lambda x: df.loc[x.idxmax(), 'solver']),
+        best_solver_cost=('cost', 'max')
+    ).reset_index()
+    
+    matrix_report['deviation'] = (matrix_report['best_cost'] - matrix_report['best_solver_cost']) / matrix_report['best_cost'] * 100.0
+    matrix_report.to_csv(os.path.join(report_path, f"{dataset_name}_matrix_summary.csv"), index=False)
+    
+    # 3. Визуализация
+    plot_dataset_results(df, report_path, dataset_name)
+
+def plot_dataset_results(df: pd.DataFrame, output_path: str, dataset_name: str):
+    """Визуализирует результаты для датасета"""
+    plt.figure(figsize=(12, 8))
+    for solver in df['solver'].unique():
+        solver_df = df[df['solver'] == solver]
+        plt.scatter(
+            solver_df['size'], 
+            solver_df['deviation'],
+            label=solver,
+            alpha=0.5
+        )
+    
+    plt.xlabel('Matrix Size')
+    plt.ylabel('Deviation from Best Solution (%)')
+    plt.title(f'Solution Quality vs Matrix Size - {dataset_name}')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(output_path, f'{dataset_name}_quality_vs_size.png'))
+    plt.close()
+    
+    plt.figure(figsize=(12, 8))
+    for solver in df['solver'].unique():
+        solver_df = df[df['solver'] == solver]
+        plt.scatter(
+            solver_df['size'], 
+            solver_df['time'],
+            label=solver,
+            alpha=0.5
+        )
+    
+    plt.xlabel('Matrix Size')
+    plt.ylabel('Execution Time (seconds)')
+    plt.yscale('log')
+    plt.title(f'Execution Time vs Matrix Size - {dataset_name}')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(output_path, f'{dataset_name}_time_vs_size.png'))
+    plt.close()
+    
+    # График распределения времени по решателям
+    plt.figure(figsize=(14, 8))
+    df.boxplot(column='time', by='solver', grid=True, vert=True, showfliers=False)
+    plt.title(f'Execution Time Distribution - {dataset_name}')
+    plt.suptitle('')
+    plt.ylabel('Execution Time (seconds)')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_path, f'{dataset_name}_time_distribution.png'))
+    plt.close()
 
 def generate_summary_report(df: pd.DataFrame, results_path: str):
     """

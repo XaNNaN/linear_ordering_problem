@@ -1,0 +1,2 @@
+matrix,size,best_cost,solver_count,best_solver,best_solver_cost,deviation
+N-sgb75,75,2690972,6,GreatDeluge,2735710,-1.6625219437437475
