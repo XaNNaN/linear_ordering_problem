@@ -5,7 +5,7 @@
 import numpy as np
 import random
 from numba import njit
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 @njit
 def calculate_lop_cost(matrix: np.ndarray, ordering: List[int]) -> int:
@@ -94,23 +94,84 @@ def _generate_neighborhood(ordering: List[int],
     return neighborhood
 
 
-def generate_random_neighbor(solution: List[int], neighborhood_type: str) -> List[int]:
+def generate_random_neighbor(solution: List[int], neighborhood_type: str) -> Tuple[List[int], int, int]:
     n = len(solution)
     if neighborhood_type == 'swap':
         i, j = random.sample(range(n), 2)
         neighbor = solution.copy()
         neighbor[i], neighbor[j] = neighbor[j], neighbor[i]
-        return neighbor
+        return neighbor, i, j
     elif neighborhood_type == 'insert':
         i, j = random.sample(range(n), 2)
         neighbor = solution.copy()
         elem = neighbor.pop(i)
+        if j > i:
+            j -= 1
         neighbor.insert(j, elem)
-        return neighbor
+        return neighbor, i, j
     elif neighborhood_type == 'reverse':
         i, j = sorted(random.sample(range(n), 2))
         neighbor = solution.copy()
         neighbor[i:j+1] = reversed(neighbor[i:j+1])
-        return neighbor
+        return neighbor, i, j
     else:
         raise ValueError(f"Unknown neighborhood type: {neighborhood_type}")
+    
+
+def calc_insert_cost_(matrix: np.ndarray, old_cost: int, old_ordering: List[int], i: int, j: int):
+    if i == j:
+        return 0
+    if i < j:
+
+        a_i = old_ordering[i]
+        a_j = old_ordering[j]
+        
+        # Разница для пары (i, j)
+        # delta = matrix[a_j, a_i] - matrix[a_i, a_j]
+        delta = 0
+        
+        # Суммирование по всем k между i и j
+        for k in range(i + 1, j):
+            a_k = old_ordering[k]
+            # delta += matrix[a_j, a_k] - matrix[a_i, a_k]
+            # delta += matrix[a_k, a_i] - matrix[a_k, a_j]
+            delta += matrix[a_k, a_i] - matrix[a_i, a_k]
+            
+        return old_cost + delta
+    if i > j:
+        a_i = old_ordering[i]
+        a_j = old_ordering[j]
+        
+        # Разница для пары (i, j)
+        # delta = matrix[a_j, a_i] - matrix[a_i, a_j]
+        delta = 0
+        
+        # Суммирование по всем k между i и j
+        for k in range(j, i-1):
+            a_k = old_ordering[k]
+            # delta += matrix[a_j, a_k] - matrix[a_i, a_k]
+            # delta += matrix[a_k, a_i] - matrix[a_k, a_j]
+            delta += matrix[a_i, a_k] - matrix[a_k, a_i]
+            
+        return old_cost + delta
+
+
+def calc_insert_cost(matrix, old_cost, ordering, i, j):
+    if i == j:
+        return 0
+        
+    x = ordering[i]  # Элемент для перемещения
+    
+    if j < i:  # Перемещение влево
+        indices = range(j, i)
+        sign = 1
+    else:  # j > i (перемещение вправо)
+        indices = range(i + 1, j + 1)
+        sign = -1
+    
+    total = 0
+    for k in indices:
+        y = ordering[k]
+        total += matrix[x, y] - matrix[y, x]
+    
+    return sign * total + old_cost

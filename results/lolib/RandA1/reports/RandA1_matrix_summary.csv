@@ -1,3 +1,4 @@
 matrix,size,best_cost,solver_count,best_solver,best_solver_cost,deviation
-N-t1d100,100,102853,6,Greedy (best_insertion),106730.0,-3.769457380922287
-N-t1d150,150,225747,6,GreatDeluge,228865.0,-1.381192219608677
+N-t1d100,100,102853,10,Greedy (best_insertion),106730.0,-3.769457380922287
+N-t1d150,150,227572,10,Greedy (best_insertion),230520.0,-1.2954141985833054
+N-t1d200,200,398496,10,Greedy (best_insertion),401966.0,-0.8707741106560668

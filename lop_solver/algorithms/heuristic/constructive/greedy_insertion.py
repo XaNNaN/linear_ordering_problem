@@ -143,7 +143,7 @@ class GreedySolver(HeuristicSolver):
         return best_candidate
     
     # Лучшая вставка (прямая)
-    def _best_insertion(self, current_order: List[int], candidates: List[int]) -> Tuple[int, int]:
+    def _best_insertion_nonopt(self, current_order: List[int], candidates: List[int]) -> Tuple[int, int]:
         best_candidate = -1
         best_pos = -1
         best_delta = -np.inf
@@ -162,6 +162,35 @@ class GreedySolver(HeuristicSolver):
                     best_candidate = candidate
                     best_pos = pos
                     
+        return best_candidate, best_pos
+    
+    def _best_insertion(self, current_order: List[int], candidates: List[int]) -> Tuple[int, int]:
+        n = len(current_order)
+        best_candidate = -1
+        best_pos = -1
+        best_delta = -np.inf
+        
+        # Предварительно вычисляем суммы для кандидатов
+        left_sums = {c: 0 for c in candidates}
+        right_sums = {c: np.sum(self.matrix[c, current_order]) for c in candidates}
+        
+        # Перебираем все возможные позиции вставки
+        for pos in range(n + 1):
+            # Проверяем всех кандидатов для текущей позиции
+            for c in candidates:
+                delta = left_sums[c] + right_sums[c]
+                if delta > best_delta:
+                    best_delta = delta
+                    best_candidate = c
+                    best_pos = pos
+            
+            # Обновляем суммы для следующей позиции (если это не последняя позиция)
+            if pos < n:
+                node = current_order[pos]
+                for c in candidates:
+                    left_sums[c] += self.matrix[node, c]
+                    right_sums[c] -= self.matrix[c, node]
+        
         return best_candidate, best_pos
     
     # Лучшая вставка (обратная)

@@ -42,15 +42,15 @@ class BaseSolver(ABC):
         }
     
 
-class ExactSolver(BaseSolver):
-    def __init__(self, matrix: np.ndarray):
-        super().__init__(matrix)
-        self.nodes_explored = 0
+# class ExactSolver(BaseSolver):
+#     def __init__(self, matrix: np.ndarray):
+#         super().__init__(matrix)
+#         self.nodes_explored = 0
 
-    def get_stats(self) -> dict:
-        stats = super().get_stats()
-        stats.update({"nodes_explored": self.nodes_explored})
-        return stats
+#     def get_stats(self) -> dict:
+#         stats = super().get_stats()
+#         stats.update({"nodes_explored": self.nodes_explored})
+#         return stats
     
 
 class HeuristicSolver(BaseSolver):

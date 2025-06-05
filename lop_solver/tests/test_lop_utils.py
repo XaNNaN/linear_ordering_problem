@@ -1,6 +1,7 @@
 # pytest tests/test_lop_utils.py -v
 import numpy as np
 import pytest
+import random
 from utils.lop_utils import calculate_lop_cost, generate_neighborhood, is_valid_permutation, calculate_lop_cost_fast
 
 def test_calculate_lop_cost_2x2():
@@ -92,7 +93,8 @@ def test_is_valid_permutation(ordering, n, expected):
     
 
 def test_calculate_lop_cost_fast_performance(benchmark):
-    matrix = np.random.rand(100, 100)
-    ordering = list(range(100))
+    matrix = np.random.rand(400, 400)
+    ordering = list(range(400))
+    random.shuffle(ordering)
     benchmark(calculate_lop_cost_fast, matrix, ordering)
 

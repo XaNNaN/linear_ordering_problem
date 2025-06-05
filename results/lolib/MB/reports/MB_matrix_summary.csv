@@ -1,16 +1,31 @@
 matrix,size,best_cost,solver_count,best_solver,best_solver_cost,deviation
-N-r100a2,100,142400,6,GreatDeluge,142400.0,0.0
-N-r100b2,100,141477,6,Greedy (best_insertion),141477.0,0.0
-N-r100c2,100,138333,6,GreatDeluge,138333.0,0.0
-N-r100d2,100,141230,6,Greedy (best_insertion),141230.0,0.0
-N-r100e2,100,145261,6,Greedy (best_insertion),145261.0,0.0
-N-r150a0,150,353762,6,Becker (non-opt),353762.0,0.0
-N-r150a1,150,343168,6,GreatDeluge,343168.0,0.0
-N-r150b0,150,360003,6,GreatDeluge,360003.0,0.0
-N-r150b1,150,340647,6,GreatDeluge,340647.0,0.0
-N-r150c0,150,355892,6,GreatDeluge,355892.0,0.0
-N-r150c1,150,338593,6,GreatDeluge,338593.0,0.0
-N-r150d0,150,353362,6,GreatDeluge,353362.0,0.0
-N-r150d1,150,342185,6,GreatDeluge,342185.0,0.0
-N-r150e0,150,357674,6,Becker (non-opt),357674.0,0.0
-N-r150e1,150,340170,6,GreatDeluge,340170.0,0.0
+N-r100a2,100,140724,10,Greedy (best_insertion),140724.0,0.0
+N-r100b2,100,141477,10,Greedy (best_insertion),141477.0,0.0
+N-r100c2,100,139304,10,Greedy (best_insertion),139304.0,0.0
+N-r100d2,100,141230,10,Greedy (best_insertion),141230.0,0.0
+N-r100e2,100,145261,10,Greedy (best_insertion),145261.0,0.0
+N-r150a0,150,358006,10,Greedy (best_insertion),358006.0,0.0
+N-r150a1,150,344536,10,Greedy (best_insertion),344536.0,0.0
+N-r150b0,150,365920,10,Greedy (best_insertion),365920.0,0.0
+N-r150b1,150,344820,10,Greedy (best_insertion),344820.0,0.0
+N-r150c0,150,361927,10,Greedy (best_insertion),361927.0,0.0
+N-r150c1,150,342705,10,Greedy (best_insertion),342705.0,0.0
+N-r150d0,150,361463,10,Greedy (best_insertion),361463.0,0.0
+N-r150d1,150,345869,10,Greedy (best_insertion),345869.0,0.0
+N-r150e0,150,364887,10,Greedy (best_insertion),364887.0,0.0
+N-r150e1,150,345749,10,Greedy (best_insertion),345749.0,0.0
+N-r200a0,200,651561,10,Greedy (best_insertion),651561.0,0.0
+N-r200a1,200,611277,10,Greedy (best_insertion),611277.0,0.0
+N-r200b0,200,649051,10,Greedy (best_insertion),649051.0,0.0
+N-r200b1,200,613340,10,Greedy (best_insertion),613340.0,0.0
+N-r200c0,200,655654,10,Greedy (best_insertion),655654.0,0.0
+N-r200c1,200,608802,10,Greedy (best_insertion),608802.0,0.0
+N-r200d0,200,651291,10,Greedy (best_insertion),651291.0,0.0
+N-r200d1,200,610317,10,Greedy (best_insertion),610317.0,0.0
+N-r200e0,200,639707,10,Greedy (best_insertion),639707.0,0.0
+N-r200e1,200,604373,10,Greedy (best_insertion),604373.0,0.0
+N-r250a0,250,1012977,10,Greedy (best_insertion),1012977.0,0.0
+N-r250b0,250,1007224,10,Greedy (best_insertion),1007224.0,0.0
+N-r250c0,250,1003371,10,Greedy (best_insertion),1003371.0,0.0
+N-r250d0,250,1006321,10,Greedy (best_insertion),1006321.0,0.0
+N-r250e0,250,1003781,10,Greedy (best_insertion),1003781.0,0.0

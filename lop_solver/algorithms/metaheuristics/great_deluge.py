@@ -3,7 +3,7 @@ import random
 import time
 from typing import List, Tuple, Optional
 from algorithms.abs_solvers import HeuristicSolver
-from utils.lop_utils import generate_neighborhood, generate_random_neighbor
+from utils.lop_utils import generate_neighborhood, generate_random_neighbor, calc_insert_cost
 
 class GreatDelugeAlgorithm(HeuristicSolver):
     """
@@ -116,11 +116,15 @@ class GreatDelugeAlgorithm(HeuristicSolver):
 
                 
                 # Выбор случайного соседа
-                candidate_solution = generate_random_neighbor(
+                candidate_solution, i, j = generate_random_neighbor(
                     self.current_solution,
                     self.neighborhood_type
                 )
-                candidate_cost = self._calc_cost(self.matrix, candidate_solution)
+                if self.neighborhood_type == 'insert':
+                    candidate_cost = calc_insert_cost(self.matrix, self.current_cost, self.current_solution, i, j)
+                    # candidate_cost = self._calc_cost(self.matrix, candidate_solution)
+                else:
+                    candidate_cost = self._calc_cost(self.matrix, candidate_solution)
 
                 # Принятие решения о переходе
                 if candidate_cost > self.current_cost:
@@ -147,7 +151,7 @@ class GreatDelugeAlgorithm(HeuristicSolver):
                 #     self.water_level -= dry
                 # else:
                 # self.water_level += self.best_cost /  self.max_iter # базовый
-                self.water_level +=  3 * self.best_cost /  self.max_iter # базовый
+                self.water_level +=  1 * self.best_cost /  self.max_iter # базовый
                 
                 # Сохранение истории для анализа
                 self.water_level_history.append(self.water_level)

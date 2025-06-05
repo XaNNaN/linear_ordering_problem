@@ -1,3 +1,4 @@
 matrix,size,best_cost,solver_count,best_solver,best_solver_cost,deviation
-N-t2d100,100,25200,6,Greedy (best_insertion),28440.0,-12.857142857142856
-N-t2d150,150,75042,6,Becker (non-opt),78736.0,-4.922576690386717
+N-t2d100,100,25194,10,Greedy (best_insertion),28442.0,-12.891958402794316
+N-t2d150,150,75455,10,Greedy (best_insertion),79304.0,-5.101053608110794
+N-t2d200,200,146700,10,Greedy (best_insertion),151398.0,-3.202453987730061
