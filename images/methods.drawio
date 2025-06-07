@@ -1,0 +1,59 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9" pages="2">
+  <diagram name="Страница — 1" id="tjPvB-6ASsauyRJY4SKC">
+    <mxGraphModel dx="475" dy="283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qKwuBa31pnjc1NjAVmBi-1" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot; face=&quot;ALS Sector Regular&quot;&gt;Точные методы&amp;nbsp;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fc.webfontfree.com%2Fc.js%3Ff%3DALSSector-Regular;fillColor=light-dark(#FFFFFF,#176DEA);strokeColor=light-dark(#176DEA,#176DEA);" parent="1" vertex="1">
+          <mxGeometry x="120" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qKwuBa31pnjc1NjAVmBi-2" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;Эвристики&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fdb.onlinewebfonts.com%2Fc%2F595030bb520f1e2ab2fb4e8d7c5f30a5%3Ffamily%3DALS%2BSector%2BRegular%2BRegular;strokeColor=light-dark(#176DEA,#176DEA);" parent="1" vertex="1">
+          <mxGeometry x="280" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qKwuBa31pnjc1NjAVmBi-3" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;Метаэвристики&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fdb.onlinewebfonts.com%2Fc%2F595030bb520f1e2ab2fb4e8d7c5f30a5%3Ffamily%3DALS%2BSector%2BRegular%2BRegular;fillColor=light-dark(#FFFFFF,#176DEA);strokeColor=light-dark(#176DEA,#176DEA);" parent="1" vertex="1">
+          <mxGeometry x="440" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qKwuBa31pnjc1NjAVmBi-4" value="&lt;font face=&quot;ALS Sector Regular&quot; style=&quot;font-size: 28px; color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;?&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="240" y="200" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qKwuBa31pnjc1NjAVmBi-5" value="&lt;font face=&quot;ALS Sector Regular&quot; style=&quot;font-size: 28px; color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;?&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="200" width="40" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="OklFJOwUyQJz4yPodtM4" name="Страница — 2">
+    <mxGraphModel dx="570" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#176DEA,#176DEA);" edge="1" parent="1" source="oqVAarm5xL2LTLWEMeM9-1" target="oqVAarm5xL2LTLWEMeM9-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-1" value="&lt;font color=&quot;#176dea&quot;&gt;Класс&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fc.webfontfree.com%2Fc.js%3Ff%3DALSSector-Regular;fillColor=light-dark(#FFFFFF,#176DEA);strokeColor=light-dark(#176DEA,#176DEA);" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;strokeColor=light-dark(#176DEA,#176DEA);" edge="1" parent="1" source="oqVAarm5xL2LTLWEMeM9-2" target="oqVAarm5xL2LTLWEMeM9-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="250" />
+              <mxPoint x="220" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-2" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;Фабрика&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fdb.onlinewebfonts.com%2Fc%2F595030bb520f1e2ab2fb4e8d7c5f30a5%3Ffamily%3DALS%2BSector%2BRegular%2BRegular;strokeColor=light-dark(#176DEA,#176DEA);" vertex="1" parent="1">
+          <mxGeometry x="320" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=light-dark(#176DEA,#176DEA);" edge="1" parent="1" source="oqVAarm5xL2LTLWEMeM9-3" target="oqVAarm5xL2LTLWEMeM9-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-3" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;Словарь&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fdb.onlinewebfonts.com%2Fc%2F595030bb520f1e2ab2fb4e8d7c5f30a5%3Ffamily%3DALS%2BSector%2BRegular%2BRegular;fillColor=light-dark(#FFFFFF,#176DEA);strokeColor=light-dark(#176DEA,#176DEA);" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oqVAarm5xL2LTLWEMeM9-8" value="&lt;font style=&quot;color: light-dark(rgb(23, 109, 234), rgb(23, 109, 234));&quot;&gt;Решатель&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontFamily=ALS Sector Regular;fontSource=https%3A%2F%2Fdb.onlinewebfonts.com%2Fc%2F595030bb520f1e2ab2fb4e8d7c5f30a5%3Ffamily%3DALS%2BSector%2BRegular%2BRegular;fillColor=light-dark(#FFFFFF,#176DEA);strokeColor=light-dark(#176DEA,#176DEA);" vertex="1" parent="1">
+          <mxGeometry x="320" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
